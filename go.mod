@@ -1,5 +1,5 @@
 module example.com/m
 
-go 1.23
+go 1.21
 
 require github.com/aws/aws-lambda-go v1.46.0
