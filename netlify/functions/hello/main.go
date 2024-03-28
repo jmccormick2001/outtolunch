@@ -72,15 +72,15 @@ func genPage(days, months int) string {
 	str.WriteString("<html>")
 	str.WriteString("<body>")
 	str.WriteString("<h2>the voyage is underway, ship arrives in " + fmt.Sprintf("%d", days) + " days or " + fmt.Sprintf("%d", months) + " months</h2>")
+	str.WriteString("<audio controls>")
+	str.WriteString("<source src=\"https://www.silvermansound.com/wp-content/uploads/the-buccaneers-haul.mp3\" type=\"audio/mp3\">")
+	str.WriteString("</audio>")
 	str.WriteString("<img src=\"https://en.pimg.jp/102/717/473/1/102717473.jpg\" height=\"100\" width=\"100\">")
 	for i := 0; i < days; i++ {
 		str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
 	}
 
 	str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png\" height=\"100\" width=\"100\">")
-	str.WriteString("<audio controls>")
-	str.WriteString("<source src=\"https://www.silvermansound.com/wp-content/uploads/the-buccaneers-haul.mp3\" type=\"audio/mp3\">")
-	str.WriteString("</audio>")
 	str.WriteString("</body>")
 	str.WriteString("</html>")
 	return str.String()
