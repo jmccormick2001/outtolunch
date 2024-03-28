@@ -71,7 +71,7 @@ func genPage(days, months int) string {
 
 	str.WriteString("<html>")
 	str.WriteString("<body>")
-	str.WriteString("<h2>the ship sails in " + fmt.Sprintf("%d", days) + " days or " + fmt.Sprintf("%d", months) + " months</h2>")
+	str.WriteString("<h2>the voyage is underway, ship arrives in " + fmt.Sprintf("%d", days) + " days or " + fmt.Sprintf("%d", months) + " months</h2>")
 	str.WriteString("<img src=\"https://en.pimg.jp/102/717/473/1/102717473.jpg\" height=\"100\" width=\"100\">")
 	for i := 0; i < days; i++ {
 		str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
