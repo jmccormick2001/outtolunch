@@ -64,8 +64,8 @@ func roundTime(input float64) int {
 }
 
 func genPage(waves int) string {
-	shipIcon := "https://en.pimg.jp/102/717/473/1/102717473.jpg"
-	islandIcon := "https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png"
+	//shipIcon := "https://en.pimg.jp/102/717/473/1/102717473.jpg"
+	//islandIcon := "https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png"
 	var str strings.Builder
 
 	str.WriteString("<html>")
