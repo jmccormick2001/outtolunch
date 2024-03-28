@@ -78,6 +78,9 @@ func genPage(days, months int) string {
 	}
 
 	str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png\" height=\"100\" width=\"100\">")
+	str.WriteString("<audio controls>")
+	str.WriteString("<source src=\"https://www.silvermansound.com/wp-content/uploads/the-buccaneers-haul.mp3\" type=\"audio/mp3\">")
+	str.WriteString("</audio>")
 	str.WriteString("</body>")
 	str.WriteString("</html>")
 	return str.String()
