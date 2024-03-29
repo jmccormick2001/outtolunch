@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strings"
 
 	"example.com/m/internal"
@@ -29,6 +30,11 @@ func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResp
 func genPage(daysFrom, days, months int) string {
 	//shipIcon := "https://en.pimg.jp/102/717/473/1/102717473.jpg"
 	//islandIcon := "https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png"
+	// sharkIcon := "https://img.freepik.com/free-vector/aggressive-great-white-shark-cartoon_1308-102349.jpg"
+
+	min := days - daysFrom
+	max := days
+	sharkDay := rand.Intn(max-min) + min
 	var str strings.Builder
 
 	str.WriteString("<html>")
@@ -45,8 +51,12 @@ func genPage(daysFrom, days, months int) string {
 
 	str.WriteString("<img src=\"https://en.pimg.jp/102/717/473/1/102717473.jpg\" height=\"100\" width=\"100\">")
 
-	for i := 0; i < days; i++ {
-		str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
+	for i := daysFrom + 1; i < days; i++ {
+		if i == sharkDay {
+			str.WriteString("<img src=\"https://img.freepik.com/free-vector/aggressive-great-white-shark-cartoon_1308-102349.jpg\" height=\"40\" width=\"40\">")
+		} else {
+			str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
+		}
 	}
 
 	str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Island-icon.png\" height=\"100\" width=\"100\">")
