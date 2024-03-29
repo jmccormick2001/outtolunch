@@ -39,7 +39,12 @@ func genPage(daysFrom, days, months int) string {
 	str.WriteString("<source src=\"https://www.silvermansound.com/wp-content/uploads/the-buccaneers-haul.mp3\" type=\"audio/mp3\">")
 	str.WriteString("</audio>")
 	str.WriteString("<br>")
+	for i := 0; i < daysFrom; i++ {
+		str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
+	}
+
 	str.WriteString("<img src=\"https://en.pimg.jp/102/717/473/1/102717473.jpg\" height=\"100\" width=\"100\">")
+
 	for i := 0; i < days; i++ {
 		str.WriteString("<img src=\"https://icons.iconarchive.com/icons/iconarchive/seaside/512/Water-Wave-icon.png\" height=\"40\" width=\"40\">")
 	}

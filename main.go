@@ -7,19 +7,22 @@ import (
 )
 
 func main() {
-	daysTill, monthsTill := retirementAlgorithm()
+	daysFrom, daysTill, monthsTill := retirementAlgorithm()
 
-	fmt.Printf("the ship sails in %d days or %d months \n", daysTill, monthsTill)
+	fmt.Printf("the ship started sailing %d days ago and arrives in %d days or %d months \n", daysFrom, daysTill, monthsTill)
 }
 
-func retirementAlgorithm() (days int, months int) {
+func retirementAlgorithm() (daysfrom int, days int, months int) {
+	startDate := time.Date(2024, time.Month(3), 1, 0, 0, 0, 0, time.UTC)
 	targetDate := time.Date(2025, time.Month(4), 1, 0, 0, 0, 0, time.UTC)
 	today := time.Now()
 	months = diffMonths(targetDate, today)
 	diff := time.Until(targetDate)
 	days = roundTime(diff.Seconds() / 86400)
+	daysfrom = int(today.Sub(startDate).Hours() / 24)
 	return
 }
+
 func diffMonths(now time.Time, then time.Time) int {
 	diffYears := now.Year() - then.Year()
 	if diffYears == 0 {

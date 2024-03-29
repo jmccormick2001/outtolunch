@@ -6,14 +6,13 @@ import (
 )
 
 func RetirementAlgorithm() (daysFrom int, days int, months int) {
-	startDate := time.Date(2024, time.Month(4), 1, 0, 0, 0, 0, time.UTC)
-	targetDate := time.Date(2025, time.Month(4), 1, 0, 0, 0, 0, time.UTC)
+	startDate := time.Date(2024, time.Month(3), 1, 0, 0, 0, 0, time.UTC)  // March 1, 2024
+	targetDate := time.Date(2025, time.Month(4), 1, 0, 0, 0, 0, time.UTC) // April 1, 2025
 	today := time.Now()
 	months = diffMonths(targetDate, today)
-	diffFrom := time.Since(startDate)
 	diff := time.Until(targetDate)
 	days = roundTime(diff.Seconds() / 86400)
-	daysFrom = roundTime(diffFrom.Seconds() / 86400)
+	daysFrom = int(today.Sub(startDate).Hours() / 24)
 	return
 }
 func diffMonths(now time.Time, then time.Time) int {
